@@ -1,4 +1,4 @@
-package br.com.fiap.calmarket.Dao;
+package br.com.fiap.calmarket.dao;
 
 import br.com.fiap.calmarket.Exception.IdNaoEncontradoException;
 import jakarta.persistence.EntityManager;

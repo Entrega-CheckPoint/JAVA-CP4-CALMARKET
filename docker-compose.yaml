@@ -1,24 +1,25 @@
 version: "3.8"
 services:
-  mysql:
-    image: mysql:8.0
+
+# docker pull postgres:15.14-alpine3.21
+  postgres:
+    image: postgres:15.14-alpine3.21
     container_name: calmarket-db
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
-      MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_DATABASE: calmarket
-      MYSQL_USER: caluser
-      MYSQL_PASSWORD: calpass
+      POSTGRES_DB: calmarket
+      POSTGRES_USER: caluser
+      POSTGRES_PASSWORD: calpass
     volumes:
-      - calmarket_data:/var/lib/mysql
+      - calmarket_data:/var/lib/postgresql/data
     restart: unless-stopped
 
   calmarket-app:
     build: ./calmarket
     container_name: calmarket-api
     depends_on:
-      - mysql
+      - postgres
     ports:
       - "8082:8080"
     restart: unless-stopped

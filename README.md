@@ -478,6 +478,10 @@ Nele ficam centralizadas as informações de conexão com o banco de dados, ajus
 
 ---
 
+## **API Socket TCP com Criptografia RSA**
+
+[Clique aqui para seguir com a documentação](parte1-socket-rsa\README_PARTE1.md)
+
 ## **Deploy**
 
 O deploy da aplicação foi realizado em uma **máquina virtual (VM) Linux** hospedada na **Microsoft Azure**, utilizando **Docker** para encapsular e executar os serviços.
@@ -509,20 +513,18 @@ docker compose up -d --build
 ```yaml
 version: "3.8"
 services:
-  mysql:
-    image: mysql:8.0
+  postgres:
+    image: postgres:15.14-alpine3.21
     container_name: calmarket-db
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
-      MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_DATABASE: calmarket
-      MYSQL_USER: caluser
-      MYSQL_PASSWORD: calpass
+      POSTGRES_DB: calmarket
+      POSTGRES_USER: caluser
+      POSTGRES_PASSWORD: calpass
     volumes:
-      - calmarket_data:/var/lib/mysql
+      - calmarket_data:/var/lib/postgresql/data
     restart: unless-stopped
-
   calmarket-app:
     build: ./calmarket
     container_name: calmarket-api
@@ -604,3 +606,4 @@ Isso significa que:
 | Victor Nieves Britto     | 554557 |
 | Gabriel Alves Thomaz     | 558637 |
 | Gustavo Goulart Bretas   | 555708 |
+| Nathália Gomes da Silva  | 554945 |

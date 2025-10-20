@@ -1,7 +1,7 @@
-package br.com.fiap.calmarket.Controller;
+package br.com.fiap.calmarket.controller;
 
-import br.com.fiap.calmarket.Dao.ProdutoDaoImpl;
-import br.com.fiap.calmarket.Model.Produto;
+import br.com.fiap.calmarket.dao.ProdutoDaoImpl;
+import br.com.fiap.calmarket.model.Produto;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;

@@ -1,4 +1,4 @@
-package br.com.fiap.calmarket.Model;
+package br.com.fiap.calmarket.model;
 
 public enum Setor {
     LIMPEZA, HORTIFRUTI, PANIFICADORA, ALIMENTOS, UTENSILIOS, BEBIDAS

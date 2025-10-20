@@ -1,4 +1,4 @@
-package br.com.fiap.calmarket.Dao;
+package br.com.fiap.calmarket.dao;
 
 import java.util.List;
 

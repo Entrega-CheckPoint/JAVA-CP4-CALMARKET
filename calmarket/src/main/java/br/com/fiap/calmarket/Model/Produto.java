@@ -1,4 +1,4 @@
-package br.com.fiap.calmarket.Model;
+package br.com.fiap.calmarket.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
